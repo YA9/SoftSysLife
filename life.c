@@ -340,6 +340,180 @@ int main()
                         }
                     }
                 }
+                if (x == 0)
+                {
+                    if (board[y][x] == 0)
+                    {
+                        count = 0;
+                        if (board[y - 1][board_width - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][board_width - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][board_width - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (count == 3)
+                        {
+                            temp_board[y][x] = 1;
+                        }
+                    }
+                    else if (board[y][x] == 1)
+                    {
+                        count = 0;
+                        if (board[y - 1][board_width - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][board_width - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][board_width - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (count < 2)
+                        {
+                            temp_board[y][x] = 0;
+                        }
+                        else if (count > 3)
+                        {
+                            temp_board[y][x] = 0;
+                        }
+                    }
+                }
+                if (x == board_width - 1)
+                {
+                    if (board[y][x] == 0)
+                    {
+                        count = 0;
+                        if (board[y - 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][0] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][0] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][0] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (count == 3)
+                        {
+                            temp_board[y][x] = 1;
+                        }
+                    }
+                    else if (board[y][x] == 1)
+                    {
+                        count = 0;
+                        if (board[y - 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][0] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][0] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][0] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (count < 2)
+                        {
+                            temp_board[y][x] = 0;
+                        }
+                        else if (count > 3)
+                        {
+                            temp_board[y][x] = 0;
+                        }
+                    }
+                }
             }
         }
         for (int i = 0; i < board_height; i++)
