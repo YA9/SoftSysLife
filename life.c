@@ -60,6 +60,8 @@ int main()
     // printf("%d\n", board[0][0]);
     // printToCoordinates(10, 10, "HELLO");
     int count = 0;
+    int iterations = 0;
+    char score[20];
     for (int i = 0; i < board_height; i++)
     {
         for (int j = 0; j < board_width; j++)
@@ -75,8 +77,9 @@ int main()
             for (int x = 0; x < board_width; x++)
             {
                 printToCoordinates(y + 3, x + 8, "O");
-                // if (y > 2 || y < 20 || x > 7 || x < 74) {
-                if (y > 3 || y < 19 || x > 8 || x < 73)
+                // if (y > 2 || y < 20 || x > 7 || x < 74)
+                // if (y > 3 || y < 19 || x > 8 || x < 73)
+                if (y > 0 && y < board_height - 1 && x > 0 && x < board_width - 1)
                 {
                     if (board[y][x] == 0)
                     {
@@ -163,6 +166,180 @@ int main()
                         }
                     }
                 }
+                if (y == 0)
+                {
+                    if (board[y][x] == 0)
+                    {
+                        count = 0;
+                        if (board[board_height - 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[board_height - 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[board_height - 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (count == 3)
+                        {
+                            temp_board[y][x] = 1;
+                        }
+                    }
+                    else if (board[y][x] == 1)
+                    {
+                        count = 0;
+                        if (board[board_height - 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[board_height - 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[board_height - 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y + 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (count < 2)
+                        {
+                            temp_board[y][x] = 0;
+                        }
+                        else if (count > 3)
+                        {
+                            temp_board[y][x] = 0;
+                        }
+                    }
+                }
+                if (y == board_height - 1)
+                {
+                    if (board[y][x] == 0)
+                    {
+                        count = 0;
+                        if (board[y - 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[0][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[0][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[0][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (count == 3)
+                        {
+                            temp_board[y][x] = 1;
+                        }
+                    }
+                    else if (board[y][x] == 1)
+                    {
+                        count = 0;
+                        if (board[y - 1][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y - 1][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[0][x + 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[0][x] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[0][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (board[y][x - 1] == 1)
+                        {
+                            count += 1;
+                        }
+                        if (count < 2)
+                        {
+                            temp_board[y][x] = 0;
+                        }
+                        else if (count > 3)
+                        {
+                            temp_board[y][x] = 0;
+                        }
+                    }
+                }
             }
         }
         for (int i = 0; i < board_height; i++)
@@ -181,6 +358,9 @@ int main()
         }
         load();
         printToCoordinates(20, 74, "#");
+        iterations += 1;
+        sprintf(score, "Generation: %d", iterations);
+        printToCoordinates(21, 34, score);
         usleep(200000); /* Controls the time delay between frames. */
     }
 }
