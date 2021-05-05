@@ -556,10 +556,15 @@ int main()
                 }
             }
         }
-        load();                                       /* Prints the game frame. */
-        iterations += 1;                              /* Adds 1 to the number of generations that have passed. */
-        sprintf(score, "Generation: %d", iterations); /* Saves the new generation number to the score string. */
-        printToCoordinates(21, 34, score);            /* Prints the current number of generations passed below the game board. */
-        usleep(frame_delay);                          /* Controls the time delay between frames. */
+        load();                                         /* Prints the game frame. */
+        iterations += 1;                                /* Adds 1 to the number of generations that have passed. */
+        sprintf(score, "Generation: %d\n", iterations); /* Saves the new generation number to the score string. */
+        printToCoordinates(21, 34, score);              /* Prints the current number of generations passed below the game board. */
+        usleep(frame_delay);
+        /* Controls the time delay between frames. */
+        if (iterations == 150) /* Runs the game for a given number of iterations. */
+        {
+            break;
+        }
     }
 }
